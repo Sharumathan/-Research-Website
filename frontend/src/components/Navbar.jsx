@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="nav-content">
         <NavLink to="/" className="nav-brand" onClick={closeMenu}>
           <Bot size={28} color="#a78bfa" />
-          <span>Open LLM Reader</span>
+          <span>Vision Mate</span>
         </NavLink>
         
         {/* Mobile menu toggle */}

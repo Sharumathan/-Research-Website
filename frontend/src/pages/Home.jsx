@@ -9,7 +9,7 @@ const Home = () => {
         <div className="hero-icon">
           <Bot size={40} />
         </div>
-        <h1 className="title-gradient" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Open LLM Reader</h1>
+        <h1 className="title-gradient" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Vision Mate</h1>
         <p style={{ color: '#b69df8', fontSize: '1.2rem', maxWidth: '800px', marginBottom: '2rem' }}>
           Voice Agentic Smart Reader Application In Sinhala and Tamil For Visually Impaired People
         </p>
