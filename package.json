@@ -1,0 +1,14 @@
+{
+  "name": "research-website-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root package for Railway Nixpacks deployment",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "prebuild": "cd frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start"
+  }
+}
