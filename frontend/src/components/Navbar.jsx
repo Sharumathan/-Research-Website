@@ -16,10 +16,16 @@ const Navbar = () => {
           <span>Vision Mate</span>
         </NavLink>
         
-        {/* Mobile menu toggle */}
-        <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} color="#f8fafc" /> : <Menu size={28} color="#f8fafc" />}
-        </div>
+        {/* Modern mobile menu toggle */}
+        <button 
+          className={`mobile-toggle-btn ${isOpen ? 'open' : ''}`} 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation"
+        >
+          <div className="icon-wrapper">
+            {isOpen ? <X size={24} color="#f8fafc" /> : <Menu size={24} color="#f8fafc" />}
+          </div>
+        </button>
 
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
           <NavLink to="/" className={activeStyle} onClick={closeMenu}>Home</NavLink>
