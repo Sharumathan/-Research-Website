@@ -5,37 +5,37 @@ const milestonesData = [
   {
     id: 1,
     title: 'Project Proposal',
-    date: 'February 15, 2025',
+    date: 'September 8, 2025',
     marks: '15%',
-    desc: 'Submission and presentation of the initial project idea, defining the problem statement, objectives, and proposed methodology for the Smart Reader application.'
+    desc: 'Evaluation of the proposed solution, including problem definition, research objectives, and technical feasibility of the Smart Reader system. The proposed approach was accepted by the panel, confirming its relevance and potential impact. Feedback highlighted the need to enhance the system by incorporating emotionally expressive Tamil Text-to-Speech (TTS) capabilities to improve user interaction and accessibility.'
   },
   {
     id: 2,
     title: 'Progress Presentation - 1',
-    date: 'April 20, 2025',
+    date: 'January 5, 2026',
     marks: '20%',
-    desc: 'Demonstration of the initial component integration, including IVGN models (BiSeNetV2) deployment and dataset collection (ACTSEA) progress.'
+    desc: 'Assessment of approximately 50% project completion, focusing on initial implementation and integration of core components such as IVGN models (BiSeNetV2) and dataset preparation (ACTSEA). Evaluators reviewed technical progress, system architecture, and experimental results. Feedback emphasized the need to strengthen the novelty and innovation aspects of each component to clearly differentiate the solution from existing approaches.'
   },
   {
     id: 3,
     title: 'Progress Presentation - 2',
-    date: 'July 10, 2025',
+    date: 'March 9, 2026',
     marks: '20%',
-    desc: 'Showcasing the Generative QA features (Qwen LoRA fine-tuning for Tamil) and Voice Command Integration evaluations.'
+    desc: 'Evaluation of near-complete system development (around 90%), with emphasis on full integration of all components including Generative Question Answering (Qwen LoRA fine-tuned for Tamil) and Voice Command functionality. The system was expected to be deployed and demonstrated as a fully functional mobile application (Vision Mate). Feedback focused on improving system stability, seamless integration, and real-world usability.'
   },
   {
     id: 4,
     title: 'Final Assessment',
-    date: 'September 30, 2025',
+    date: 'May 4, 2026',
     marks: '30%',
-    desc: 'Submission of the complete working smart mobile prototype and the comprehensive final research document.'
+    desc: 'Comprehensive evaluation of the completed Smart Reader system, including the fully functional mobile application, codebase quality, and final research documentation. Assessment criteria included implementation accuracy, system performance, usability, and readiness for real-world deployment. Special attention was given to the potential for scalability and commercialization of the solution.'
   },
   {
     id: 5,
     title: 'Viva',
-    date: 'October 15, 2025',
+    date: 'May 4, 2026',
     marks: '15%',
-    desc: 'Final oral examination addressing the defense of the research findings, methodologies, and technological choices.'
+    desc: 'Final oral examination assessing the depth of understanding of the project, including research methodologies, design decisions, and technical implementations. The panel evaluated the ability to justify system choices, explain results, and discuss future improvements, scalability, and commercialization potential of the Smart Reader application.'
   }
 ];
 
