@@ -63,15 +63,15 @@ export const features = [
 export const domainContent = {
   'Literature Survey': {
     title: 'Literature Survey',
-    text: 'Existing solutions for visually impaired people often focus on single languages or lack contextual awareness. Research shows that while OCR has advanced, its integration with agentic reasoning in South Asian languages like Sinhala and Tamil remains a significant gap. Studies on ACTSEA and DocSeg v2 highlight the challenges in document segmentation and quality for low-resource languages.'
+    text: 'The development of assistive reading technologies has been significantly influenced by advancements in optical character recognition (OCR), natural language processing (NLP), and speech synthesis. Transformer-based OCR systems such as TrOCR have improved text extraction accuracy under varying real-world conditions, while prior studies on assistive navigation highlight the effectiveness of auditory feedback for visually impaired users during document capture. Additionally, multilingual transformer models and large language models (LLMs) have demonstrated strong capabilities in text summarization, classification, and question answering. However, most of these approaches primarily focus on high-resource languages, leaving limited support for low-resource languages such as Sinhala and Tamil. Existing screen readers also rely heavily on linear reading paradigms and lack intelligent navigation and emotional expressiveness. Therefore, current research emphasizes the need for integrated systems that combine document acquisition, semantic understanding, interactive retrieval, and expressive speech synthesis into a unified framework.'
   },
   'Research Problem': {
     title: 'Research Problem',
-    text: 'Visually impaired Sinhala and Tamil speakers face significant barriers accessing printed materials, despite global advances in assistive technology. According to the WHO, over 1 billion people experience vision impairment worldwide, limiting access to education and information. In Sri Lanka and Tamil-speaking regions, lack of robust tools for Sinhala/Tamil OCR and expressive Text to Speech (TTS) exacerbates this gap. Benchmarks show that common OCR engines (e.g., Tesseract, EasyOCR) yield high error rates on Sinhala/Tamil documents due to complex scripts, legacy fonts, varied layouts, and real-world capture distortions. Meanwhile, TTS systems for these languages often lack naturalness and emotional nuance, reducing comprehension and engagement for long-form content. Compounding this, visually impaired users struggle to align cameras properly for document capture. Studies demonstrate that audio/haptic guidance markedly improves framing success, but existing solutions rarely target Sinhala/Tamil text characteristics (e.g., detecting upside-down Sinhala script). Blur, low light, skew, and orientation errors further degrade OCR accuracy, leading to user frustration. Additionally, navigating lengthy documents via voice without intelligent segmentation or summarization forces linear reading, hindering efficient information access. Thus, the research problem is to create a voice-agentic reader tailored for Sinhala and Tamil visually impaired users that: (1) provides voice/haptic camera-alignment guidance handling blur, focus, and upside-down pages; (2) generates emotionally expressive, context-aware TTS in Sinhala; (3) segments and summarizes with Sinhala LLM for long documents on demand; and (4) segments and summarizes with Tamil LLM for long document on demand. Addressing these challenges can democratize access to printed and digital Sinhala/Tamil content, improving education, literacy, and inclusion.'
+    text : 'Despite recent advancements in assistive technologies, visually impaired users still face major challenges when accessing textual content, especially in low-resource languages like Sinhala and Tamil. Existing systems are often fragmented, addressing only specific tasks such as OCR, speech output, or navigation independently. This results in poor user experience, limited adaptability, and inefficient interaction. Furthermore, accurate document capture without visual feedback remains difficult due to alignment and orientation issues, while traditional screen readers lack non-linear navigation capabilities. In addition, current text-to-speech systems produce monotonous speech, reducing user engagement and comprehension. These limitations highlight the need for a comprehensive and intelligent solution that enables seamless document interaction, natural voice-based navigation, and expressive speech output for visually impaired users.'
   },
   'Research Gap': {
     title: 'Research Gap',
-    text: 'The primary gap lies in the lack of an integrated "Agentic Smart Reader" that combines high-fidelity OCR with generative AI capabilities specifically optimized for Sinhala and Tamil. Current systems fail to handle complex layouts and do not offer a robust natural language interface for multi-turn queries about the text.'
+    text : 'Although prior studies have explored OCR, NLP, and speech synthesis individually, there is a clear gap in integrating these technologies into a unified system tailored for low-resource languages. Most existing solutions lack support for Sinhala and Tamil in advanced tasks such as document-grounded question answering, semantic segmentation, and intelligent navigation. Additionally, Retrieval-Augmented Generation (RAG) techniques have been widely applied in high-resource languages but remain underexplored in Tamil structured document understanding. Emotional text-to-speech systems are also limited due to the scarcity of annotated datasets and linguistic complexity. Moreover, existing assistive systems fail to provide adaptive, context-aware guidance during document capture and do not support personalized or interactive reading experiences. This research addresses these gaps by proposing a multi-component system that integrates intelligent capture, structured understanding, interactive retrieval, and emotional speech synthesis in a single framework.'
   },
   'Research Objective': {
     title: 'Research Objective',
@@ -91,30 +91,32 @@ impaired users in low-resource language communities. `
   },
   'Methodology': {
     title: 'Methodology',
-    text: 'The methodology involves a sequence of image processing (using OpenCV), region segmentation (BiSeNetV2), and text extraction. This is followed by a RAG-based Generative AI layer using LoRA fine-tuned Qwen models. The system is deployed via a Flutter-based mobile application communicating with a high-performance backend.'
+    text : 'The proposed system follows a modular and multi-component architecture designed to support intelligent document interaction. The methodology begins with document acquisition, where a voice-guided navigation system assists users in capturing properly aligned images for OCR processing. The extracted text is then processed through language-specific pipelines. Tamil documents undergo semantic segmentation and retrieval-augmented generation for structured understanding and question answering, while Sinhala documents are indexed for voice-based navigation using command classification models. The system further incorporates an emotional text-to-speech module that generates expressive speech output based on detected emotional context. The modular design ensures scalability, flexibility, and seamless integration between components, enabling efficient processing under low-resource conditions.'
   },
-  'Technologies': {
-    title: 'Technologies',
-    text: 'The stack leverages NVIDIA CUDA for training, Google Cloud Vision for initial OCR, and custom transformer models like SinBERT and XLM-RoBERTa. The interaction layer uses a RAG pipeline to ensure factual grounding in the extracted text, with output delivered via an emotion-conditioned neural TTS system.'
-  }
+'Technologies': {
+  title: 'Technologies',
+  text: `This research employs a combination of advanced machine learning, deep learning, and system-level technologies to enable intelligent document interaction in low-resource language environments. The system incorporates semantic segmentation to ensure accurate document boundary detection and geometric alignment during capture, along with optical character recognition (OCR) using cloud-based services such as Google Cloud Vision for reliable text extraction. GPU-accelerated training with NVIDIA CUDA is utilized to efficiently train deep learning models on large-scale datasets. To enhance contextual understanding and reduce hallucinations, a Retrieval-Augmented Generation (RAG) framework is integrated, enabling document-grounded responses. Additionally, transformer-based models such as SinBERT and XLM-RoBERTa are used for multilingual text understanding and emotion classification, while Support Vector Machines (SVM) with TF-IDF features are applied for accurate Sinhala voice command classification. The system further incorporates emotion-conditioned neural text-to-speech (TTS) to generate expressive and natural speech output, and reinforcement learning techniques, specifically contextual bandits, to provide personalized content recommendations based on user behavior. These technologies are seamlessly integrated into a unified pipeline, enabling robust document understanding, interactive querying, efficient navigation, and an enhanced auditory experience for visually impaired users.`
+}
 };
 
 export const milestones = [
   { title: 'Topic Assessment Form (TAF)', date: 'June 2025', marks: '5%', icon: FcDocument, type: 'Individual' },
   { title: 'Project Charter', date: 'July 2025', marks: '10%', icon: FcBriefcase, type: 'Group' },
-  { title: 'Proposal reports (draft)', date: 'August 2025', marks: '5%', icon: FcReading, type: 'Group' },
-  { title: 'Proposal presentation', date: 'September 2025', marks: '15%', icon: FaTv, type: 'Group' },
-  { title: 'Proposal reports (final)', date: 'October 2025', marks: '10%', icon: FcDocument, type: 'Group' },
-  { title: 'Progress Presentation – I', date: 'November 2025', marks: '10%', icon: FaTv, type: 'Group' },
-  { title: 'Check List I', date: 'December 2025', marks: '5%', icon: FcSurvey, type: 'Individual' },
-  { title: 'Research paper', date: 'January 2026', marks: '20%', icon: FcGraduationCap, type: 'Individual' },
-  { title: 'Final reports', date: 'February 2026', marks: '15%', icon: FcDocument, type: 'Group' },
-  { title: 'Progress Presentation – II', date: 'March 2026', marks: '10%', icon: FaTv, type: 'Group' },
-  { title: 'Check List II', date: 'April 2026', marks: '5%', icon: FcSurvey, type: 'Individual' },
-  { title: 'Submission of RP', date: 'May 2026', marks: 'N/A', icon: FcKindle, type: 'Individual' },
-  { title: 'Final presentation & VIVA', date: 'June 2026', marks: '25%', icon: FcGraduationCap, type: 'Group' },
-  { title: 'Project website', date: 'July 2026', marks: '5%', icon: FaLaptopCode, type: 'Group' },
-  { title: 'Research logbook', date: 'August 2026', marks: '5%', icon: FcGallery, type: 'Individual' },
+  { title: 'Proposal reports (draft)', date: '31st of August 2025', marks: '5%', icon: FcReading, type: 'Group' },
+  { title: 'Proposal presentation', date: '8th of September 2025', marks: '15%', icon: FaTv, type: 'Group' },
+  { title: 'Proposal reports (final)', date: '28th of September 2025', marks: '10%', icon: FcDocument, type: 'Group' },
+  { title: 'Progress Presentation – I', date: '5th of January 2026', marks: '10%', icon: FaTv, type: 'Group' },
+  { title: 'Check List I', date: '11th of January 2026', marks: '5%', icon: FcSurvey, type: 'Individual' },
+  { title: 'Research paper', date: '8th of May 2026', marks: '20%', icon: FcGraduationCap, type: 'Individual' },
+  { title: 'Final reports', date: '26th of April 2026', marks: '15%', icon: FcDocument, type: 'Group' },
+  { title: 'Progress Presentation – II', date: '9th of March 2026', marks: '10%', icon: FaTv, type: 'Group' },
+  { title: 'Check List II', date: '11th of January 2026', marks: '5%', icon: FcSurvey, type: 'Individual' },
+  { title: 'Check List III', date: '30th of April 2026', marks: '5%', icon: FcSurvey, type: 'Individual' },
+  { title: 'Check List IV', date: '30th of April 2026', marks: '5%', icon: FcSurvey, type: 'Individual' },
+  { title: 'Submission of RP', date: '8th of May 2026', marks: 'N/A', icon: FcKindle, type: 'Individual' },
+  { title: 'Final presentation & VIVA', date: '4th of April 2026', marks: '25%', icon: FcGraduationCap, type: 'Group' },
+  { title: 'Project website', date: '27th of April 2026', marks: '5%', icon: FaLaptopCode, type: 'Group' },
+  { title: 'Research logbook', date: '27th of April 2026', marks: '5%', icon: FcGallery, type: 'Individual' },
 ];
 
 export const team = [
