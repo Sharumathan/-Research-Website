@@ -120,22 +120,27 @@ export const milestones = [
 ];
 
 export const team = [
-  { name: 'Researcher One', role: 'Lead AI Engineer', icon: FaUserCircle, social: { linkedin: '#', github: '#' } },
-  { name: 'Researcher Two', role: 'Mobile Developer', icon: FaUserCircle, social: { linkedin: '#', github: '#' } },
-  { name: 'Researcher Three', role: 'NLP Specialist', icon: FaUserCircle, social: { linkedin: '#', github: '#' } },
-  { name: 'Researcher Four', role: 'UI/UX Designer', icon: FaUserCircle, social: { linkedin: '#', github: '#' } }
+  { name: 'B J A Siriwardana(Leader)', role: 'Speech Processing & Emotional TTS(Text to Speech System) Lead in Sihala and Tamil', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/jithara-siriwardana-029897246/', github: 'https://github.com/Jithara14' } },
+  { name: 'A D Hewagama(Member)', role: 'Rag based Summarization & Nonlinear navigation Lead in Sinhala', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/amasha-hewagama-8653702a4/', github: 'https://github.com/Amashwinx' } },
+  { name: 'M C Aluwihare(Member)', role: 'User Hapic Guidence & Smart OCR system Lead in Sinhala and Tamil', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/maleesha-aluwihare-5b352b245/', github: 'https://github.com/MaleeshaAluwihare' } },
+  { name: 'M Sharumathan(Member)', role: 'Conversational Tamil LLM & Content based Recommendation Lead', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/sharumathan/', github: 'https://github.com/Sharumathan' } }
 ];
 
 export const documents = [
-  { title: 'Project Charter', description: 'The document gives the information regarding the statement of scope, objectives overview, an outline of scope, an approximate schedule and people who are participating in a project.', icon: FcBriefcase, file: '#' },
-  { title: 'Project Proposal', description: 'The document contains details like goals, objectives, important dates, milestones and requirements needed to start and complete the project.', icon: FcDocument, file: '#' },
-  { title: 'Research Paper', description: 'A research paper contains writing that provides Literature review, Research methodology, analysis, interpretation, and argument based on in-depth independent research.', icon: FcGraduationCap, file: '#' },
+  { title: 'Project Charter', description: 'The document gives the information regarding the statement of scope, objectives overview, an outline of scope, an approximate schedule and people who are participating in a project.', icon: FcBriefcase, file: '/reports/TAF_25-26J-125-supervisor signed.pdf' },
+  { title: 'Project Proposal', description: 'The document contains details like goals, objectives, important dates, milestones and requirements needed to start and complete the project.', icon: FcDocument, file: '/reports/proposal.zip' },
+  { title: 'Research Paper', description: 'A research paper contains writing that provides Literature review, Research methodology, analysis, interpretation, and argument based on in-depth independent research.', icon: FcGraduationCap, file: '/reports/conference_paper.pdf' },
+  { title: 'CheckList Documents', description: 'A checklist document is used to systematically evaluate whether the system meets predefined requirements and performance criteria.', icon: FcGraduationCap, file: '/reports/checklist.zip' },
+  { title: 'Final Research Reports', description: 'A final research report (thesis) is a complete academic document that explains your entire project in detail.', icon: FcGraduationCap, file: '' },
+
 ];
 
 export const presentations = [
-  { title: 'Inception Presentation', description: 'Initial pitch for the research concept summarizing the problem and proposed solution.', icon: FaTv, file: '#' },
-  { title: 'Mid-term Progress', description: 'Status update on model training progress and initial prototype evaluation results.', icon: FaTv, file: '#' },
-  { title: 'Final Viva', description: 'Comprehensive presentation of all research findings and final system demonstration.', icon: FaTv, file: '#' },
+  { title: 'Proposal Presentation', description: 'Initial pitch for the research concept summarizing the problem and proposed solution.', icon: FaTv, file: '/presentations/proposal.pdf' },
+  { title: 'Progress presntation one', description: 'Status update on model training progress and initial prototype evaluation results.', icon: FaTv, file: '/presentations/pp1.pdf' },
+  { title: 'Progress presentation two', description: 'Comprehensive presentation of all research findings and 90% of progress of integrated system demonstration.', icon: FaTv, file: '/presentations/pp2.pdf' },
+  { title: 'final presentation', description: 'Comprehensive presentation of all research findings and fully integrated system demonstration.', icon: FaTv, file: '' },
+
 ];
 
 export const footerInfo = {
