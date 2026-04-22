@@ -120,10 +120,10 @@ export const milestones = [
 ];
 
 export const team = [
-  { name: 'Researcher One', role: 'Lead AI Engineer', icon: FaUserCircle, social: { linkedin: '#', github: '#' } },
-  { name: 'Researcher Two', role: 'Mobile Developer', icon: FaUserCircle, social: { linkedin: '#', github: '#' } },
-  { name: 'Researcher Three', role: 'NLP Specialist', icon: FaUserCircle, social: { linkedin: '#', github: '#' } },
-  { name: 'Researcher Four', role: 'UI/UX Designer', icon: FaUserCircle, social: { linkedin: '#', github: '#' } }
+  { name: 'B J A Siriwardana(Leader)', role: 'Speech Processing & Emotional TTS(Text to Speech System) Lead in Sihala and Tamil', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/jithara-siriwardana-029897246/', github: 'https://github.com/Jithara14' } },
+  { name: 'A D Hewagama(Member)', role: 'Rag based Summarization & Nonlinear navigation Lead in Sinhala', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/amasha-hewagama-8653702a4/', github: 'https://github.com/Amashwinx' } },
+  { name: 'M C Aluwihare(Member)', role: 'User Hapic Guidence & Smart OCR system Lead in Sinhala and Tamil', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/maleesha-aluwihare-5b352b245/', github: 'https://github.com/MaleeshaAluwihare' } },
+  { name: 'M Sharumathan(Member)', role: 'Conversational Tamil LLM & Content based Recommendation Lead', icon: FaUserCircle, social: { linkedin: 'https://www.linkedin.com/in/sharumathan/', github: 'https://github.com/Sharumathan' } }
 ];
 
 export const documents = [
