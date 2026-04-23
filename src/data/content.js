@@ -1,7 +1,9 @@
 import {
   FaBrain, FaEye, FaMicrophone, FaBookOpen, FaFileAlt,
   FaChalkboard, FaUsers, FaEnvelope, FaMapMarkerAlt,
-  FaPhone, FaDownload, FaUserCircle, FaTv, FaFilePdf, FaImage, FaLaptopCode, FaAws
+  FaPhone, FaDownload, FaUserCircle, FaTv, FaFilePdf, FaImage, FaLaptopCode, FaAws,
+  FaExclamationTriangle, FaSearch, FaBullseye, FaCogs,
+  FaHandPointer, FaSearchPlus, FaVolumeUp, FaRoute
 } from 'react-icons/fa';
 import {
   SiTensorflow, SiPython, SiReact, SiRender,
@@ -60,21 +62,56 @@ export const features = [
   }
 ];
 
+export const systemHighlights = [
+  {
+    title: 'Guided Document Alignment',
+    description: 'Real-time haptic and voice-guided assistance for capturing perfectly oriented documents independently.',
+    icon: FaHandPointer,
+    color: '#8B5CF6'
+  },
+  {
+    title: 'Semantic OCR & RAG',
+    description: 'Beyond traditional reading—intelligent Sinhala and Tamil text extraction with context-aware querying.',
+    icon: FaSearchPlus,
+    color: '#A78BFA'
+  },
+  {
+    title: 'Emotional TTS Agent',
+    description: 'A proactive voice companion that conveys meaning and emotion through natural, expressive speech.',
+    icon: FaVolumeUp,
+    color: '#6D28D9'
+  },
+  {
+    title: 'Interactive Navigation',
+    description: 'Empowering users with non-linear exploration of documents through intelligent subtopic detection.',
+    icon: FaRoute,
+    color: '#8B5CF6'
+  }
+];
+
 export const domainContent = {
   'Literature Survey': {
     title: 'Literature Survey',
+    icon: FaBookOpen,
+    shortText: 'Exploration of existing assistive reading technologies and the state of OCR and NLP for low-resource languages.',
     text: 'The development of assistive reading technologies has been significantly influenced by advancements in optical character recognition (OCR), natural language processing (NLP), and speech synthesis. Transformer-based OCR systems such as TrOCR have improved text extraction accuracy under varying real-world conditions, while prior studies on assistive navigation highlight the effectiveness of auditory feedback for visually impaired users during document capture. Additionally, multilingual transformer models and large language models (LLMs) have demonstrated strong capabilities in text summarization, classification, and question answering. However, most of these approaches primarily focus on high-resource languages, leaving limited support for low-resource languages such as Sinhala and Tamil. Existing screen readers also rely heavily on linear reading paradigms and lack intelligent navigation and emotional expressiveness. Therefore, current research emphasizes the need for integrated systems that combine document acquisition, semantic understanding, interactive retrieval, and expressive speech synthesis into a unified framework.'
   },
   'Research Problem': {
     title: 'Research Problem',
+    icon: FaExclamationTriangle,
+    shortText: 'Addressing the fragmented accessibility tools and lack of integrated support for Sinhala and Tamil speakers.',
     text : 'Despite recent advancements in assistive technologies, visually impaired users still face major challenges when accessing textual content, especially in low-resource languages like Sinhala and Tamil. Existing systems are often fragmented, addressing only specific tasks such as OCR, speech output, or navigation independently. This results in poor user experience, limited adaptability, and inefficient interaction. Furthermore, accurate document capture without visual feedback remains difficult due to alignment and orientation issues, while traditional screen readers lack non-linear navigation capabilities. In addition, current text-to-speech systems produce monotonous speech, reducing user engagement and comprehension. These limitations highlight the need for a comprehensive and intelligent solution that enables seamless document interaction, natural voice-based navigation, and expressive speech output for visually impaired users.'
   },
   'Research Gap': {
     title: 'Research Gap',
+    icon: FaSearch,
+    shortText: 'Bridging the gap in multilingual document understanding, interactive retrieval, and expressive speech synthesis.',
     text : 'Although prior studies have explored OCR, NLP, and speech synthesis individually, there is a clear gap in integrating these technologies into a unified system tailored for low-resource languages. Most existing solutions lack support for Sinhala and Tamil in advanced tasks such as document-grounded question answering, semantic segmentation, and intelligent navigation. Additionally, Retrieval-Augmented Generation (RAG) techniques have been widely applied in high-resource languages but remain underexplored in Tamil structured document understanding. Emotional text-to-speech systems are also limited due to the scarcity of annotated datasets and linguistic complexity. Moreover, existing assistive systems fail to provide adaptive, context-aware guidance during document capture and do not support personalized or interactive reading experiences. This research addresses these gaps by proposing a multi-component system that integrates intelligent capture, structured understanding, interactive retrieval, and emotional speech synthesis in a single framework.'
   },
   'Research Objective': {
     title: 'Research Objective',
+    icon: FaBullseye,
+    shortText: 'Developing a voice-agentic smart reader with semantic OCR, RAG-based interaction, and expressive TTS.',
     text: `The main objective of this research is to develop a voice-agentic smart reader application specifically designed to empower 
 visually impaired Sinhala and Tamil speakers by integrating advanced, human-centered technologies that go beyond 
 traditional assistive tools. The system will combine semantic-aware Optical Character Recognition (OCR) with emotionally 
@@ -91,10 +128,14 @@ impaired users in low-resource language communities. `
   },
   'Methodology': {
     title: 'Methodology',
+    icon: FaCogs,
+    shortText: 'A modular architecture integrating document acquisition, semantic understanding, and emotional speech synthesis.',
     text : 'The proposed system follows a modular and multi-component architecture designed to support intelligent document interaction. The methodology begins with document acquisition, where a voice-guided navigation system assists users in capturing properly aligned images for OCR processing. The extracted text is then processed through language-specific pipelines. Tamil documents undergo semantic segmentation and retrieval-augmented generation for structured understanding and question answering, while Sinhala documents are indexed for voice-based navigation using command classification models. The system further incorporates an emotional text-to-speech module that generates expressive speech output based on detected emotional context. The modular design ensures scalability, flexibility, and seamless integration between components, enabling efficient processing under low-resource conditions.'
   },
 'Technologies': {
   title: 'Technologies',
+  icon: FaLaptopCode,
+  shortText: 'Leveraging SinBERT, Qwen2.5, Google Cloud Vision, and NVIDIA CUDA for high-performance accessibility.',
   text: `This research employs a combination of advanced machine learning, deep learning, and system-level technologies to enable intelligent document interaction in low-resource language environments. The system incorporates semantic segmentation to ensure accurate document boundary detection and geometric alignment during capture, along with optical character recognition (OCR) using cloud-based services such as Google Cloud Vision for reliable text extraction. GPU-accelerated training with NVIDIA CUDA is utilized to efficiently train deep learning models on large-scale datasets. To enhance contextual understanding and reduce hallucinations, a Retrieval-Augmented Generation (RAG) framework is integrated, enabling document-grounded responses. Additionally, transformer-based models such as SinBERT and XLM-RoBERTa are used for multilingual text understanding and emotion classification, while Support Vector Machines (SVM) with TF-IDF features are applied for accurate Sinhala voice command classification. The system further incorporates emotion-conditioned neural text-to-speech (TTS) to generate expressive and natural speech output, and reinforcement learning techniques, specifically contextual bandits, to provide personalized content recommendations based on user behavior. These technologies are seamlessly integrated into a unified pipeline, enabling robust document understanding, interactive querying, efficient navigation, and an enhanced auditory experience for visually impaired users.`
 }
 };

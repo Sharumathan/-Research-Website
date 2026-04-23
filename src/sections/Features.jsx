@@ -5,48 +5,61 @@ import heroBg from '../assets/images/hero-bg.png';
 
 const Features = () => {
   return (
-    <section id="features" className="section-bg">
+    <section id="features" style={{ 
+      position: 'relative',
+      background: `linear-gradient(rgba(15, 10, 30, 0.85), rgba(15, 10, 30, 0.85)), url(${heroBg}) center center no-repeat`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      padding: '100px 0'
+    }}>
       <Container>
-        <div className="section-title" data-aos="fade-up">
-          <h2>Key System Features</h2>
-          <p>Innovative solutions tailored for the visually impaired community.</p>
+        <div className="section-title mb-5" data-aos="fade-up">
+          <h2 style={{ color: '#fff', borderBottomColor: 'var(--accent-violet)' }}>Key System Features</h2>
+          <p style={{ color: '#cbd5e1' }}>Innovative solutions tailored for the visually impaired community.</p>
         </div>
 
-        <Row className="align-items-center">
-          <Col lg={6} data-aos="fade-right">
-            <img src={heroBg} alt="Features" className="img-fluid rounded-4 shadow-lg" style={{ border: '5px solid white' }} />
-          </Col>
-          <Col lg={6} className="mt-5 mt-lg-0">
-            {features.map((item, idx) => (
+        <Row className="g-4 justify-content-center">
+          {features.map((item, idx) => (
+            <Col key={idx} md={6} lg={4} data-aos="zoom-in" data-aos-delay={idx * 100}>
               <div 
-                key={idx} 
-                className="d-flex mb-4 p-3 hover-lift rounded" 
-                data-aos="fade-left" 
-                data-aos-delay={idx * 100}
-                style={{ background: '#fff' }}
+                className="p-4 rounded-4 h-100 transition-all" 
+                style={{ 
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                }}
               >
-                <div className="me-4 flex-shrink-0">
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                    background: `${item.color}22`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <item.icon size={24} color={item.color} />
-                  </div>
+                <div className="mb-4 d-inline-flex align-items-center justify-content-center" style={{
+                  width: '60px',
+                  height: '60px',
+                  borderRadius: '16px',
+                  background: `${item.color}22`,
+                  border: `1px solid ${item.color}44`
+                }}>
+                  <item.icon size={26} color={item.color} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#0F0A1E' }}>{item.title}</h4>
-                  <p className="justified-text" style={{ fontSize: '14px', color: '#666', lineHeight: '1.6' }}>
+                  <h4 style={{ 
+                    fontSize: '20px', 
+                    fontWeight: '800', 
+                    color: '#fff',
+                    marginBottom: '15px'
+                  }}>
+                    {item.title}
+                  </h4>
+                  <p className="justified-text" style={{ 
+                    fontSize: '14.5px', 
+                    color: '#94a3b8', 
+                    lineHeight: '1.7',
+                    margin: '0'
+                  }}>
                     {item.description}
                   </p>
                 </div>
               </div>
-            ))}
-          </Col>
+            </Col>
+          ))}
         </Row>
       </Container>
     </section>

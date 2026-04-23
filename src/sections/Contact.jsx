@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button, Spinner, Alert } from 'react-bootstr
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { footerInfo } from '../data/content';
+import heroBg from '../assets/images/hero-bg.png';
 
 const Contact = () => {
   const form = useRef();
@@ -27,68 +28,104 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-bg">
+    <section id="contact" style={{ 
+      padding: '100px 0', 
+      background: 'linear-gradient(rgba(15, 10, 30, 0.95), rgba(8, 5, 18, 0.98)), url(' + heroBg + ') center center no-repeat',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      position: 'relative'
+    }}>
       <Container>
-        <div className="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
-          <p>Get in touch with the Vision Mate research team.</p>
+        <div className="section-title mb-5" data-aos="fade-up">
+          <h2 style={{ color: '#fff', borderBottomColor: 'var(--accent-violet)' }}>Contact Us</h2>
+          <p style={{ color: '#cbd5e1' }}>Get in touch with the Vision Mate research team.</p>
         </div>
 
         <Row className="g-4">
           <Col lg={5} data-aos="fade-right">
-            <div className="info-box p-4 mb-4 rounded-4 shadow-sm bg-white hover-lift">
-              <div className="d-flex align-items-center mb-3">
-                <FaMapMarkerAlt className="me-3" color="var(--accent-violet)" size={24} />
-                <h5 className="mb-0" style={{ color: '#0F0A1E', fontWeight: '700' }}>Location</h5>
+            {[
+              { title: 'Location', info: footerInfo.institution + ', ' + footerInfo.location, icon: FaMapMarkerAlt },
+              { title: 'Email', info: footerInfo.email, icon: FaEnvelope },
+              { title: 'Call', info: footerInfo.phone, icon: FaPhone }
+            ].map((item, i) => (
+              <div key={i} className="info-box p-4 mb-4 rounded-4 transition-all hover-lift" style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
+              }}>
+                <div className="d-flex align-items-center mb-3">
+                  <div style={{
+                    width: '45px',
+                    height: '45px',
+                    borderRadius: '12px',
+                    background: 'rgba(139, 92, 246, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px'
+                  }}>
+                    <item.icon color="var(--accent-light)" size={22} />
+                  </div>
+                  <h5 className="mb-0" style={{ color: '#fff', fontWeight: '700' }}>{item.title}</h5>
+                </div>
+                <p className="mb-0" style={{ color: '#94a3b8', fontSize: '15px' }}>{item.info}</p>
               </div>
-              <p className="mb-0 text-muted">{footerInfo.institution}, {footerInfo.location}</p>
-            </div>
-
-            <div className="info-box p-4 mb-4 rounded-4 shadow-sm bg-white hover-lift">
-              <div className="d-flex align-items-center mb-3">
-                <FaEnvelope className="me-3" color="var(--accent-violet)" size={24} />
-                <h5 className="mb-0" style={{ color: '#0F0A1E', fontWeight: '700' }}>Email</h5>
-              </div>
-              <p className="mb-0 text-muted">{footerInfo.email}</p>
-            </div>
-
-            <div className="info-box p-4 rounded-4 shadow-sm bg-white hover-lift">
-              <div className="d-flex align-items-center mb-3">
-                <FaPhone className="me-3" color="var(--accent-violet)" size={24} />
-                <h5 className="mb-0" style={{ color: '#0F0A1E', fontWeight: '700' }}>Call</h5>
-              </div>
-              <p className="mb-0 text-muted">{footerInfo.phone}</p>
-            </div>
+            ))}
           </Col>
 
           <Col lg={7} data-aos="fade-left">
-            <div className="p-4 p-md-5 rounded-4 shadow-sm bg-white">
+            <div className="p-4 p-md-5 rounded-4 shadow-lg" style={{
+              background: 'rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.05)'
+            }}>
               {status && <Alert variant={status.type} onClose={() => setStatus(null)} dismissible>{status.message}</Alert>}
               
               <Form ref={form} onSubmit={sendEmail}>
-                <Row className="g-3">
+                <Row className="g-4">
                   <Col md={6}>
                     <Form.Group controlId="userName">
-                      <Form.Label style={{ fontSize: '14px', fontWeight: '600' }}>Your Name</Form.Label>
-                      <Form.Control type="text" name="user_name" placeholder="John Doe" required className="py-2 border-light-subtle" />
+                      <Form.Label style={{ fontSize: '14px', fontWeight: '600', color: '#cbd5e1' }}>Your Name</Form.Label>
+                      <Form.Control type="text" name="user_name" placeholder="John Doe" required style={{
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        color: '#fff',
+                        padding: '12px'
+                      }} />
                     </Form.Group>
                   </Col>
                   <Col md={6}>
                     <Form.Group controlId="userEmail">
-                      <Form.Label style={{ fontSize: '14px', fontWeight: '600' }}>Your Email</Form.Label>
-                      <Form.Control type="email" name="user_email" placeholder="john@example.com" required className="py-2 border-light-subtle" />
+                      <Form.Label style={{ fontSize: '14px', fontWeight: '600', color: '#cbd5e1' }}>Your Email</Form.Label>
+                      <Form.Control type="email" name="user_email" placeholder="john@example.com" required style={{
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        color: '#fff',
+                        padding: '12px'
+                      }} />
                     </Form.Group>
                   </Col>
                   <Col md={12}>
                     <Form.Group controlId="subject">
-                      <Form.Label style={{ fontSize: '14px', fontWeight: '600' }}>Subject</Form.Label>
-                      <Form.Control type="text" name="subject" placeholder="Research Collaboration" required className="py-2 border-light-subtle" />
+                      <Form.Label style={{ fontSize: '14px', fontWeight: '600', color: '#cbd5e1' }}>Subject</Form.Label>
+                      <Form.Control type="text" name="subject" placeholder="Research Collaboration" required style={{
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        color: '#fff',
+                        padding: '12px'
+                      }} />
                     </Form.Group>
                   </Col>
                   <Col md={12}>
                     <Form.Group controlId="message">
-                      <Form.Label style={{ fontSize: '14px', fontWeight: '600' }}>Message</Form.Label>
-                      <Form.Control as="textarea" name="message" rows={5} placeholder="Write your message here..." required className="py-2 border-light-subtle" />
+                      <Form.Label style={{ fontSize: '14px', fontWeight: '600', color: '#cbd5e1' }}>Message</Form.Label>
+                      <Form.Control as="textarea" name="message" rows={5} placeholder="Write your message here..." required style={{
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        color: '#fff',
+                        padding: '12px'
+                      }} />
                     </Form.Group>
                   </Col>
                   <Col md={12} className="text-center mt-4">
@@ -96,11 +133,12 @@ const Contact = () => {
                       type="submit" 
                       disabled={loading}
                       style={{ 
-                        background: 'var(--accent-violet)', 
+                        background: 'linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-deep) 100%)',
                         border: 'none', 
-                        padding: '12px 40px', 
+                        padding: '14px 50px', 
                         borderRadius: '50px',
-                        fontWeight: '700'
+                        fontWeight: '700',
+                        boxShadow: '0 4px 15px rgba(139, 92, 246, 0.4)'
                       }}
                     >
                       {loading ? <Spinner animation="border" size="sm" /> : 'Send Message'}

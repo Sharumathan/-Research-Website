@@ -28,7 +28,6 @@ function App() {
           title="Research Documents" 
           subtitle="Official project documentation and technical reports." 
           items={documents} 
-          bgClass="section-bg" 
         />
         
         <GridSection 
@@ -37,7 +36,6 @@ function App() {
           subtitle="Visual summaries from various stages of our research." 
           items={presentations} 
           isPresentation={true}
-          bgClass="section-bg" 
         />
 
         <Milestones />
